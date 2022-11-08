@@ -20,8 +20,11 @@ class MyComponent extends React.Component {
     }
     // JSX
     render() {
+
+        const test = { name: 'hai long', age: 21 }
         return (
             <>
+                {JSON.stringify(test)}
                 <div className="a">
                     <AddUserInfor
                         handleAddNewUser={this.handleAddNewUser} />
