@@ -1,25 +1,65 @@
 import React from "react";
 
 class Displayinfor extends React.Component {
+    state = {
+        isSHowListUser: true
+    }
+    handleShowHide = () => {
+        this.setState({
+            // dau ! tuong chung cho toggle
+            isSHowListUser: !this.state.isSHowListUser
+        })
+    }
     render() {
-        console.log();
         // destructuring array/object
         const { listUsers } = this.props;
         console.log(listUsers);
         // props => viet tat cua properties
-        console.log(this.props);
+        // console.log(this.props);
         return (
             <div>
-                {listUsers.map((user) => {
-                    return (
-                        <div key={user.id}>
-                            <div>My Name is {user.name}</div>
-                            <div>My age's {user.age}</div>
-                            <hr />
-                        </div>
-                    )
-                })}
-                {/* <div>My Name is {name}</div>
+                <div>
+                    <span onClick={() => { this.handleShowHide() }}>
+                        {this.state.isSHowListUser === true ? "Hide list user" : "Show list users"}
+                    </span>
+                </div>
+                {this.state.isSHowListUser &&
+                    <div>
+                        {listUsers.map((user) => {
+
+                            return (
+                                <div key={user.id} className={+user.age > 18 ? "green" : "red"}>
+                                    <div>My Name is {user.name}</div>
+                                    <div>My age's {user.age}</div>
+                                    <hr />
+                                </div>
+                            )
+
+
+
+                            //+user.age: chuyen kieu string sang kieu number
+                            // if (+user.age > 18) {
+                            //     return (
+                            //         <div key={user.id} className="green">
+                            //             <div>My Name is {user.name}</div>
+                            //             <div>My age's {user.age}</div>
+                            //             <hr />
+                            //         </div>
+                            //     )
+                            // } else {
+                            //     return (
+                            //         <div key={user.id} className="red">
+                            //             <div>My Name is {user.name}</div>
+                            //             <div>My age's {user.age}</div>
+                            //             <hr />
+                            //         </div>
+                            //     )
+                            // }
+
+
+                        })
+                        }
+                        {/* <div>My Name is {name}</div>
                 <div>My age {age}</div>
                 <hr />
                 <div>My Name is {name}</div>
@@ -27,6 +67,8 @@ class Displayinfor extends React.Component {
                 <hr />
                 <div>My Name is {name}</div>
                 <div>My age {age}</div> */}
+                    </div >
+                }
             </div>
         )
     }
