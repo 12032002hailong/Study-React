@@ -3,9 +3,30 @@ import './DisplayInfor.scss';
 import logo from './../logo.svg'
 
 class Displayinfor extends React.Component {
-    state = {
-        isSHowListUser: true
+    constructor(props) {
+        console.log(" contructor 0");
+        super(props);
+
+        this.state = {
+            isSHowListUser: true
+        }
     }
+    componentDidMount() {
+        console.log('>> call me component didmount 1');
+        setTimeout(() => {
+            document.title = 'Hai Long 1203'
+        }, 3000)
+    }
+
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        console.log('>>> call me component did update', this.props, prevProps);
+        if (this.props.listUsers !== prevProps.listUsers) {
+            if (this.props.listUsers.length === 5) {
+                alert(`'you got 5 user's`);
+            }
+        }
+    }
+
     handleShowHide = () => {
         this.setState({
             // dau ! tuong chung cho toggle
@@ -13,9 +34,10 @@ class Displayinfor extends React.Component {
         })
     }
     render() {
+        console.log("call me render");
         // destructuring array/object
         const { listUsers } = this.props;
-        console.log(listUsers);
+        // console.log(listUsers);
         // props => viet tat cua properties
         // console.log(this.props);
         return (
