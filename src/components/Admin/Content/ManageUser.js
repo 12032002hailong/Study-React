@@ -2,6 +2,7 @@ import ModalCreateUser from "./ModalCreateUser.js";
 import './ManageUser.scss';
 import { FcPlus } from 'react-icons/fc';
 import { useState } from 'react';
+import TableUser from "./TableUser.js";
 
 
 const ManageUser = () => {
@@ -18,7 +19,7 @@ const ManageUser = () => {
                         <FcPlus />Add new users</button>
                 </div>
                 <div className="table-users-container">
-                    Table Users
+                    <TableUser />
                 </div>
                 <ModalCreateUser
                     show={showModalCreateUser}
