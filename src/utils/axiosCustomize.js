@@ -23,7 +23,6 @@ instance.interceptors.request.use(function (config) {
 
     const access_token = store?.getState()?.user?.account?.access_token;
     config.headers["Authorization"] = `Bearer ${access_token}`;
-    console.log("check access token: ", access_token);
     NProgress.start();
     return config;
 }, function (error) {
