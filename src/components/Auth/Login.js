@@ -38,7 +38,6 @@ const Login = (props) => {
 
         //submit apis
         let data = await postLogin(email, password);
-        console.log(">>> check data :", data);
         if (data && data.EC === 0) {
             dispatch(doLogin(data))
             toast.success(data.EM);
