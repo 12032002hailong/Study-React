@@ -10,7 +10,7 @@ import {
 import Layout from './Layout';
 import 'nprogress/nprogress.css';
 import { PersistGate } from 'redux-persist/integration/react'
-import 'bootstrap/dist/css/bootstrap.min.cs';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import 'react-perfect-scrollbar/dist/css/styles.css';
 import 'nprogress/nprogress.css';
 
