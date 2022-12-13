@@ -38,7 +38,7 @@ const TableQuiz = (props) => {
             <div>
                 List Quizzes:
             </div>
-            <table class="table table-hover table-bordered my-2">
+            <table className="table table-hover table-bordered my-2">
                 <thead>
                     <tr>
                         <th scope="col">ID</th>
@@ -55,14 +55,14 @@ const TableQuiz = (props) => {
                                 <td>{item.id}</td>
                                 <td>{item.name}</td>
                                 <td>{item.description}</td>
-                                <td>{item.difficult}</td>
+                                <td>{item.difficulty}</td>
                                 <td style={{ display: "flex", gap: "15px" }}>
                                     <button
-                                        onClick={() => handleUpdate()}
+                                        onClick={() => handleUpdate(item)}
                                         className="btn btn-warning"
                                     >Edit</button>
                                     <button
-                                        onClick={() => handleDelete()}
+                                        onClick={() => handleDelete(item)}
                                         className="btn btn-danger"
                                     >Delete</button>
                                 </td>

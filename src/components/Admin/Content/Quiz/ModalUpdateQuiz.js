@@ -20,7 +20,7 @@ const ModalUpdateQuiz = (props) => {
             //update state
             setDescription(dataUpdate.description);
             setName(dataUpdate.name);
-            setType(dataUpdate.type);
+            setType(dataUpdate.difficulty);
             setImage("");
             if (dataUpdate.image) {
                 setPreviewImage(`data:image/jpeg;base64,${dataUpdate.image}`);
@@ -58,7 +58,7 @@ const ModalUpdateQuiz = (props) => {
             handleClose();
             // await props.fetchListUsers();
             // props.setCurrentPage(1);
-            await props.fetchListUsersWithPaginate(props.currentPage);
+            await props.fetchQuiz();
         }
         if (data && data.EC !== 0) {
             toast.error(data.EM);
