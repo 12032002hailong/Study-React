@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import Select from 'react-select';
-import './Questions.scss';
+import './QuizQA.scss';
 import { BsFillPatchPlusFill } from "react-icons/bs";
 import { BsPatchMinusFill } from "react-icons/bs";
 import { AiOutlineMinusCircle } from "react-icons/ai";
@@ -12,7 +12,7 @@ import Lightbox from "react-awesome-lightbox";
 import { getAllQuizForAdmin, postCreateNewAnswerForQuestion, postCreateNewQuestionForQuiz } from '../../../../services/apiServices';
 import { toast } from 'react-toastify';
 
-const Questions = (props) => {
+const QuizQA = (props) => {
     const initQuestions =
         [
             {
@@ -215,10 +215,6 @@ const Questions = (props) => {
     }
     return (
         <div className='questions-container'>
-            <div className='title'>
-                Manage Questions
-            </div>
-            <hr />
             <div className='add-new-question'>
                 <div className='col-6 form-group'>
                     <label className='mb-2'>Select Quiz:</label>
@@ -342,4 +338,4 @@ const Questions = (props) => {
     )
 }
 
-export default Questions;
+export default QuizQA;
