@@ -5,6 +5,7 @@ import _ from "lodash";
 import './DetailQuiz.scss'
 import Question from "./Questions";
 import ModalResult from "./ModalResult";
+import RightContent from "./Content/RightContent";
 
 const DetailQuiz = (props) => {
     const params = useParams();
@@ -154,7 +155,9 @@ const DetailQuiz = (props) => {
                 </div>
             </div>
             <div className="right-content">
-                count down
+                <RightContent
+                    dataQuiz={dataQuiz}
+                />
             </div>
             <ModalResult
                 show={isShowModalResult}

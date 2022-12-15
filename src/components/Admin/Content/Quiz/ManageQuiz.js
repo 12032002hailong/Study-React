@@ -65,7 +65,7 @@ const ManageQuiz = (props) => {
                                 </div>
                                 <div className="form-floating">
                                     <input
-                                        type="password"
+                                        type="text"
                                         className="form-control"
                                         placeholder='description....'
                                         value={description}
