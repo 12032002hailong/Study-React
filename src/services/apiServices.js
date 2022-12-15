@@ -39,7 +39,7 @@ const postLogin = (userEmail, userPassword) => {
         {
             email: userEmail,
             password: userPassword,
-            delay: 5000
+            delay: 1000
         });
 
 }
@@ -116,6 +116,12 @@ const postUpsertQA = (data) => {
     return axios.post(`api/v1/quiz-upsert-qa`, { ...data });
 }
 
+const logout = (email, refresh_token) => {
+    return axios.post(`api/v1/logout`, {
+        email, refresh_token
+    });
+}
+
 export {
     postCreateNewUser, getAllUsers,
     putUpdateUser, deleteUser,
@@ -125,5 +131,5 @@ export {
     getAllQuizForAdmin, putUpdateQuizForAdmin
     , deleteQuizForAdmin, postCreateNewQuestionForQuiz,
     postCreateNewAnswerForQuestion, postAssignQuiz
-    , getQuizWithQA, postUpsertQA
+    , getQuizWithQA, postUpsertQA, logout
 };
