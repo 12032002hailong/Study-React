@@ -1,8 +1,6 @@
 const TableUser = (props) => {
 
     const { listUsers } = props;
-
-
     return (
         <>
             <table className="table table-hover table-bordered">
